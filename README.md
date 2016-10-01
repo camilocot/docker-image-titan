@@ -7,7 +7,7 @@
 > root@cassandra:/# nodetool enablethrift
 
 ## Run titan
-> docker run --link cassandra:cassandra -e "CASSANDRA_HOSTNAME=`docker inspect --format '{{ .NetworkSettings.IPAddress }}' cassandra`" -it camilocot/titan-dgd
+> docker run --link cassandra:cassandra -p 8182:8182 -e "CASSANDRA_HOSTNAME=`docker inspect --format '{{ .NetworkSettings.IPAddress }}' cassandra`" -it camilocot/titan-dgd
 
 ## Run gremlin console
 ```
